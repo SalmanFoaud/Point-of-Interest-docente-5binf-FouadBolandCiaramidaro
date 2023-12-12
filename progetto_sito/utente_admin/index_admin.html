@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="assets/images/favicon.png" rel="icon" />
+  <title>PROGETTO POI</title>
+  <meta
+    name="Progetto chdi visualizzaere i POI e salvarli e se loggato da admin ti permette di mobificare o aggiungere">
+  <meta name="Ciaramidaro, Boland, Fouad" content="harnishdesign.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uuid@9.0.1/dist/index.min.js"></script>
+  <script src="https://kit.fontawesome.com/89bb46cc13.js" crossorigin="anonymous"></script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+  <div class="containter">
+    <div id="login_admin">
+      <div class="row ">
+        <div id="div_login">
+          <form class="form">
+            <h3>LOGIN</h3>
+            <label for="username" class="loginb">UserName</label>
+            <input id="username" class="form-control loginb" type="text" placeholder="Username">
+            <label for="password" class="loginb">Password</label>
+            <input id="password" class="form-control loginb" type="password" placeholder="Password">
+            <button class="btn btn-primary loginb" id="login" type="button">Login</button>
+            <a href="/index.html"><button class="btn btn-primary loginb" type="button">></button></a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="admin_page" class="d-none">
+      <div class="row">
+        <h2><strong>ADMIN</strong></h2>
+      </div>
+      <br>
+      <div class="row">
+        <h3>LISTA POI</h3>
+        <div class="d-flex flex-row-reverse">
+          <a href="/progetto_sito/index.html">
+            <div class="p-2"><button class="btn btn-primary" id="back"><i class="fa-solid fa-arrow-left"></i></button>
+          </a>
+        </div>
+        <div class="p-2"><button class="btn btn-primary" id="add" data-bs-toggle="modal" data-bs-target="#addModal">
+            <i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="list_poi"></div>
+  </div>
+  <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addModalpLabel">Aggiungi un POI</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="name_a">Name</label>
+          <input id="name_a" class="form-control" type="text" placeholder="Nome">
+          <br>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                <input id="lat_a" type="number" class="form-control" placeholder="Lat" width="50px">
+              </div>
+              <div class="col-4 col-sm-6">
+                <input id="lon_a" type="number" class="form-control" placeholder="Lon" width="50px">
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <label for="textarea_a">Descrizione</label>
+          <textarea id="textarea_a" class="form-control" placeholder="Inserisci la descrizione"></textarea><br>
+
+          <form class="row g-3">
+            <div class="col-auto">
+              <input id="imgurl" type="text" class="form-control" placeholder="URL immagine">
+            </div>
+            <div class="col-auto">
+              <button id="add_img" type="button" class="btn btn-primary mb-3" width="20px">
+                <i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div class="col-auto">
+              <div class="col-auto border form-control" id="num_img">
+                0
+              </div>
+            </div>
+
+          </form>
+
+          <img scr="" id="img_a" width="98%" height="25%">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save_a" data-bs-dismiss="modal">Salve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Modifica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label for="name_m">Name</label>
+          <input id="name_m" class="form-control" type="text" placeholder="Nome">
+          <br>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                <input id="lat_m" type="number" class="form-control" placeholder="Lat" width="50px">
+              </div>
+              <div class="col-4 col-sm-6">
+                <input id="lon_m" type="number" class="form-control" placeholder="Lon" width="50px">
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <label for="textarea_m">Descrizione</label>
+          <textarea id="textarea_m" class="form-control" placeholder="Inserisci la descrizione"></textarea><br>
+          <div id="img_container"></div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save_m" data-bs-dismiss="modal">Salve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./modalges.js" type="module"></script>
+  <script src="./admin.js" type="module"></script>
+  <script src="./render.js" type="module"></script>
+  <script scr="progetto_sito/file.js" type="module"></script>
+</body>
+
+</html>
