@@ -9,7 +9,7 @@ const temple_carosello = `
   </div>`
 
 const templete_poi =
-  `<h1>%TITOLO</h1>
+  `<h3>%TITOLO</h3>
   <div id="descrizione">%DESCRIZIONE</div>`
 
 const dati_callback = (val) => {
