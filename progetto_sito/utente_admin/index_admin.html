@@ -29,28 +29,33 @@
             <input id="username" class="form-control loginb" type="text" placeholder="Username">
             <label for="password" class="loginb">Password</label>
             <input id="password" class="form-control loginb" type="password" placeholder="Password">
-            <button class="btn btn-primary loginb" id="login" type="button">Login</button>
-            <a href="/index.html"><button class="btn btn-primary loginb" type="button">></button></a>
+            <button class="btn loginb" id="login" type="button">Login</button>
+            <a href="/progetto_sito/index.html"><button class="btn loginb" type="button">></button></a>
           </form>
         </div>
       </div>
     </div>
     <div id="admin_page" class="d-none">
-      <div class="row">
-        <h2><strong>ADMIN</strong></h2>
+      <div class="row title">
+        <h2 class="text-light"><strong>ADMIN</strong></h2>
       </div>
       <br>
       <div class="row">
-        <h3>LISTA POI</h3>
-        <div class="d-flex flex-row-reverse">
-          <a href="/progetto_sito/index.html">
-            <div class="p-2"><button class="btn btn-primary" id="back"><i class="fa-solid fa-arrow-left">
-            </i></button>
-          </a>
-        </div>
-        <div class="p-2"><button class="btn btn-primary" id="add" data-bs-toggle="modal" data-bs-target="#addModal">
-            <i class="fa-solid fa-plus"></i></button>
-        </div>
+          <div class="col">
+            <h3>LISTA POI</h3>
+          </div>
+          <div class="col-md-auto">
+            
+          </div>
+          <div class="col-auto">
+            <a href="/progetto_sito/index.html">
+              <div><button class="btn btn-danger" id="back"><i class="fa-solid fa-arrow-left">
+              </i></button></div>
+            </a></div>
+          <div class="col col-auto"><button class="btn btn-danger" id="add" data-bs-toggle="modal" data-bs-target="#addModal">
+                <i class="fa-solid fa-plus"></i></button>
+            </div>
+      </div>
       </div>
     </div>
     <div id="list_poi"></div>

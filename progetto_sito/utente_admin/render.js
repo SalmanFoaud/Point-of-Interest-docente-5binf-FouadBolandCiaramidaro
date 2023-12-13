@@ -5,8 +5,8 @@ const poi_div_temple = `<div class="card" style="width: 24%; margin: 5px 5px;">
 const title_div_temple = `<h5 class="card-title">%NOME</h5>`
 const taxt_temple = ` <p class="card-text">%TEXT</p>`
 
-const button1_temple = `<button id="%NUM" class="btn btn-primary button_div"  data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>`
-const button2_temple = `<button id="%NUM" class="btn btn-primary button_div">Remove</button>`
+const button1_temple = `<button id="%NUM" class="btn btn-danger button_div"  data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>`
+const button2_temple = `<button id="%NUM" class="btn btn-danger button_div">Remove</button>`
 
 export const render_poi = (list_poi) => {
   let html = `<div class="row">`

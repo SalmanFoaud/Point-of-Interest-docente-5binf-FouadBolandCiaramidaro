@@ -7,6 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/ol@v8.1.0/dist/ol.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.1.0/ol.css">
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://kit.fontawesome.com/89bb46cc13.js" crossorigin="anonymous"></script>
   <title>
     LOGIN
   </title>
@@ -17,25 +18,28 @@
     <div class="row ">
       <div id="div_login">
         <form class="form">
-          <h3>LOGIN</h3>
+          <h3><strong>LOGIN</strong></h3>
           <label for="username" class="loginb">UserName</label>
           <input id="username" class="form-control loginb" type="text" placeholder="Username">
           <label for="password" class="loginb">Password</label>
           <input id="password" class="form-control loginb" type="password" placeholder="Password">
-          <button class="btn btn-primary loginb" id="login" type="button">Login</button>
-          <a href="/index.html"><button class="btn btn-primary loginb" type="button">></button></a>
+          <button class="btn loginb" id="login" type="button">Login</button>
+          <a href="/index.html"><button class="btn loginb" type="button">></button></a>
         </form>
       </div>
     </div>
   </div>
   <div id="utente_page" class="d-none">
-    <div class="row bg-dark">
-      <h2 class="text-light">Trieste</h2>
-    </div>
+    <div class="d-flex flex-row bd-highlight mb-3 title"> 
+        <div class="p-2 bd-highlight"><a href="/progetto_sito/index.html">
+          <button class="btn btn-darnger" id="back"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></button>
+        </a></div>
+      <div class="p-2 bd-highlight"><h2 class="text-light h2"> Trieste</h2></div>
+      </div>
     <div class="row">
     <div class="split left">
       <div class="row ">
-        <h3>LIST POI</h3>
+        <h4 class="h4" >LISTA POI</h4>
       </div>
       <div class="col">
         <div id="elenco"></div>

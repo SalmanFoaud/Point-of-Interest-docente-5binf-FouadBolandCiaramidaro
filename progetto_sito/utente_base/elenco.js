@@ -1,5 +1,5 @@
-let template = `<div id="b%id">
-<button class="desc-butt" id="%id">%nome</button>
+let template = `<div id="b%id" class="space">
+<button class="desc-butt btn btn-danger" id="%id">%nome</button>
 <div id='desc%id' class='d-none'>%descrizione</div>
 </div>`;
 let url= 'href="https://point-of-interest-docente-5binf-tpsi-2023-2024-2.docente-5binf-tpsi-2023-2024.repl.co/progetto_sito/utente_base/POI.html?id=%ID'
