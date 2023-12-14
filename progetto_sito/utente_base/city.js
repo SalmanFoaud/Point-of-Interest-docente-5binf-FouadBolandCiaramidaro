@@ -31,7 +31,7 @@ const login_callback = (val) => {
   }
 }
 function TryNullUndifinea(val) {
-  return val===null || typeof val=== "undefinad"; //cavolo è undefinad???
+  return val===null || typeof val=== "undefined"; //cavolo è undefinad???
 }
 
 window.onload= function () {

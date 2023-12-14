@@ -47,7 +47,7 @@ const login_callback = (val) => {
 }
 
 function TryNullUndifinea(val) {
-  return val===null || typeof val=== "undefinad";
+  return val===null || typeof val=== "undefined";
 }
 
 window.onload= function () {
