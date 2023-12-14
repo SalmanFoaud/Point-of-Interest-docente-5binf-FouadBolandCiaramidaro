@@ -14,6 +14,7 @@ const admin_page = document.getElementById("admin_page")
 const button_add = document.getElementById("save_a")
 const button_mod = document.getElementById("save_m")
 const add_but = document.getElementById("add_img")
+const add_img_mod=document.getElementById("add_img2")
 
 const dati_callback = (val) => {
   list_poi = JSON.parse(val.result)
@@ -22,14 +23,16 @@ const dati_callback = (val) => {
   gestione_but()
 }
 
-
 const login_callback = (val) => {
   val = JSON.parse(val.result)
   console.log(val)
+
   if (val) {
     login_admin.classList.add("d-none")
     admin_page.classList.remove("d-none")
     recupero(dati_callback)
+  } else {
+    alert("Username o password errati");
   }
 }
 
@@ -38,7 +41,11 @@ login.onclick = () => {
 }
 
 add_but.onclick = () => {
-  clickadd()
+  clickadd(0)
+}
+
+add_img_mod.onclick = ()=>{
+  clickadd(1)
 }
 
 button_add.onclick = () => {

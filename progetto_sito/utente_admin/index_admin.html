@@ -90,10 +90,10 @@
 
           <form class="row g-3">
             <div class="col-auto">
-              <input id="imgurl" type="text" class="form-control" placeholder="URL immagine">
+              <input id="imgurl" type="url" class="form-control" placeholder="URL immagine">
             </div>
             <div class="col-auto">
-              <button id="add_img" type="button" class="btn btn-primary mb-3" width="20px">
+              <button id="add_img" type="button" class="btn btn-danger mb-3" width="20px">
                 <i class="fa-solid fa-plus"></i></button>
             </div>
             <div class="col-auto">
@@ -101,12 +101,11 @@
                 0
               </div>
             </div>
-
           </form>
 
-          <img scr="" id="img_a" width="98%" height="25%">
+          <img id="img_a" width="98%" height="25%">
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="save_a" data-bs-dismiss="modal">Salve</button>
+            <button type="button" class="btn btn-danger" id="save_a" data-bs-dismiss="modal">Salve</button>
           </div>
         </div>
       </div>
@@ -140,10 +139,19 @@
           <br>
           <label for="textarea_m">Descrizione</label>
           <textarea id="textarea_m" class="form-control" placeholder="Inserisci la descrizione"></textarea><br>
-          <div id="img_container"></div>
+          <form class="row g-3">
+            <div class="col-auto">
+              <input id="imgurl2" type="url" class="form-control" placeholder="URL immagine">
+            </div>
+            <div class="col-auto">
+              <button id="add_img2" type="button" class="btn btn-danger mb-3" width="20px">
+                <i class="fa-solid fa-plus"></i></button>
+            </div>
+          </form>
+          <img id="img_mod" width="98%" height="25%">
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="save_m" data-bs-dismiss="modal">Salve</button>
+            <button type="button" class="btn btn-danger" id="save_m" data-bs-dismiss="modal">Salva</button>
           </div>
         </div>
       </div>

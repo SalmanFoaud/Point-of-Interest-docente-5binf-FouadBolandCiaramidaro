@@ -1,7 +1,7 @@
 const token = "77c8080f-df5b-44a8-b065-eca077af208f";
-const username = document.getElementById("username")
-const password = document.getElementById("password")
-const lista_poi = document.getElementById("list_poi")
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const lista_poi = document.getElementById("list_poi");
 
 /*
 username:utente

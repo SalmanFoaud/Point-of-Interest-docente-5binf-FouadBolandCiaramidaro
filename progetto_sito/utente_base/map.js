@@ -101,8 +101,8 @@ function initOverlay(map, points) {
     if (map.hasFeatureAtPixel(event.pixel) === true) { // se esiste un marker
       map.forEachFeatureAtPixel(event.pixel, (feature, layer) => { // lo recupera
         let url = 'https://point-of-interest-docente-5binf-tpsi-2023-2024-2.docente-5binf-tpsi-2023-2024.repl.co/progetto_sito/utente_base/POI.html?id=%ID'
-        url = url.replace("%ID", feature.id)
-        window.location.replace(url)
+        url = url.replace("%ID", feature.id);
+        window.location.replace(url);
       })
     } else {
       overlay.setPosition(undefined); // altrimenti lo nasconde
@@ -113,7 +113,7 @@ function initOverlay(map, points) {
 
 export const add_marker = (dati) => {
   dati.forEach((p) => {
-    addMarker(map, p)
+    addMarker(map, p);
   })
 
 }
