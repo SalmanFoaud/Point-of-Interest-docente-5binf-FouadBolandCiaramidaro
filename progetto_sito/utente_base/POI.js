@@ -47,6 +47,7 @@ const login_callback = (val) => {
 }
 
 function TryNullUndifinea(val) {
+  console.log(val)
   return val===null || typeof val=== "undefined";
 }
 
@@ -54,7 +55,7 @@ window.onload= function () {
   if (!(TryNullUndifinea(Cookies.get("username")))&& Cookies.get("username")!==""&&!(TryNullUndifinea(Cookies.get("password")))&& Cookies.get("password")!==""){
     let user=Cookies.get("username");
     let pass=Cookies.get("password");
-    console.log(typeof user,pass);
+    console.log(user,pass, "credenziali");
     Login([user, pass], login_callback);
 }else{
     console.log(Cookies.get("username"),Cookies.get("password"));

@@ -120,5 +120,5 @@ export const add_marker = (dati) => {
 
 setLayers(map);
 setCenter(map, [13.777268090352537, 45.64706244887274]);
-setZoom(map, 12);
+setZoom(map, 14);
 initOverlay(map);

@@ -8,7 +8,8 @@ const pw = document.getElementById("password");
 const login = document.getElementById("login");
 
 const utente_page = document.getElementById("utente_page");
-
+Cookies.set("s",true)
+console.log(Cookies.get("s"))
 
 const dati_callback = (val) => {
   let list_poi = JSON.parse(val.result);
@@ -21,8 +22,9 @@ const login_callback = (val) => {
   val = JSON.parse(val.result);
   console.log(val);
   if (val) {
+    if (un.value !== "" && pw.value !== ""){
     Cookies.set("username",un.value);
-    Cookies.set("password",pw.value);
+    Cookies.set("password",pw.value);}
     login_admin.classList.add("d-none");
     utente_page.classList.remove("d-none");
     recupero(dati_callback);
@@ -31,8 +33,8 @@ const login_callback = (val) => {
   }
 }
 function TryNullUndifinea(val) {
-  return val===null || typeof val=== "undefined"; //cavolo è undefinad???
-}
+  console.log(val)
+  return val===null || typeof val=== "undefined";}
 
 window.onload= function () {
 if (!(TryNullUndifinea(Cookies.get("username")))&& Cookies.get("username")!=""&&!(TryNullUndifinea(Cookies.get("password")))&& Cookies.get("password")!=""){
@@ -40,6 +42,8 @@ if (!(TryNullUndifinea(Cookies.get("username")))&& Cookies.get("username")!=""&&
   let pass=Cookies.get("password");
   console.log(user,pass);
   Login([user, pass], login_callback);
+}else{
+    console.log(Cookies.get("username"),Cookies.get("password"));
 }}
 
 

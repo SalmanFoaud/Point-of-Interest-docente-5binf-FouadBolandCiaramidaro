@@ -1,4 +1,4 @@
-const token = "77c8080f-df5b-44a8-b065-eca077af208f";
+ const token = "77c8080f-df5b-44a8-b065-eca077af208f";
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const lista_poi = document.getElementById("list_poi");
@@ -7,6 +7,24 @@ const lista_poi = document.getElementById("list_poi");
 username:utente
 password:utente
 */
+function register(data) {
+  fetch("https://ws.progettimolinari.it/credential/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "key": "119c7e0d-3261-45f9-b6bf-7a1b4ea1b93b"
+    },
+    body: JSON.stringify({
+      username: "Admin",
+      password: "admin"
+    })
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
 export function Login(data, callback1) {
   fetch("https://ws.progettimolinari.it/credential/login", {

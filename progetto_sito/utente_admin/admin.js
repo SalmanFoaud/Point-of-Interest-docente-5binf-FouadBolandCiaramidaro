@@ -37,7 +37,8 @@ const login_callback = (val) => {
 }
 
 login.onclick = () => {
-  Login([un.value, pw.value], login_callback)
+  if (un.value==="Admin"){
+  Login([un.value, pw.value], login_callback)}
 }
 
 add_but.onclick = () => {
