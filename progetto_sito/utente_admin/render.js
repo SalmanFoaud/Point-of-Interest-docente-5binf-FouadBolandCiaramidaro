@@ -16,7 +16,6 @@ export const render_poi = (list_poi) => {
     }
     html += poi_div_temple.replace("%URL", poi.img[0])
     html += title_div_temple.replace("%NOME", poi.nome) + "    " + poi.coordi + "<hr>"
-    html += taxt_temple.replace("%TEXT", poi.descri + "<br>")
     html += button1_temple.replace("%NUM", "button_" + poi.id.toString() + "_e") + " " +
       button2_temple.replace("%NUM", "button_" + poi.id.toString() + "_r")
     html += `</div></div>`
