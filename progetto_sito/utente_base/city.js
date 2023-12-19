@@ -6,16 +6,21 @@ const login_admin = document.getElementById("login_admin");
 const un = document.getElementById("username");
 const pw = document.getElementById("password");
 const login = document.getElementById("login");
+const logout = document.getElementById("lonout");
 
 const utente_page = document.getElementById("utente_page");
-Cookies.set("s",true)
-console.log(Cookies.get("s"))
+
 
 const dati_callback = (val) => {
   let list_poi = JSON.parse(val.result);
   console.log(list_poi);
   add_marker(list_poi);
   crea_poi(list_poi);
+}
+
+logout.onclick=()=>{
+  Cookies.remove("username")
+  Cookies.remove("password")
 }
 
 const login_callback = (val) => {
